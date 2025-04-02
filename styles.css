@@ -1,0 +1,175 @@
+/* Inventory Count Tool - Custom Styles */
+
+/* Dark mode toggle button */
+.dark-mode-toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: background-color 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+body.dark-mode .app-card {
+    background-color: #2d2d2d;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode h1, 
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode label {
+    color: #f0f0f0;
+}
+
+body.dark-mode p {
+    color: #d0d0d0;
+}
+
+body.dark-mode input[type=text],
+body.dark-mode textarea {
+    background-color: #3d3d3d;
+    color: #f0f0f0;
+    border-color: #4d4d4d;
+}
+
+body.dark-mode input[type=text]:focus,
+body.dark-mode textarea:focus {
+    border-color: #6366F1;
+    background-color: #3d3d3d;
+}
+
+body.dark-mode input[type=text]::placeholder {
+    color: #909090;
+}
+
+body.dark-mode footer {
+    color: #909090;
+}
+
+body.dark-mode pre#jsonResult {
+    background-color: #1a1a1a;
+    border: 1px solid #3d3d3d;
+}
+
+body.dark-mode label[for="fileUpload"] {
+    background-color: #3d3d3d;
+    border-color: #4d4d4d;
+}
+
+body.dark-mode label[for="fileUpload"]:hover {
+    background-color: #4d4d4d;
+}
+
+body.dark-mode label[for="fileUpload"] p {
+    color: #b0b0b0;
+}
+
+body.dark-mode label[for="fileUpload"] svg {
+    color: #909090;
+}
+
+/* Verbeterde leesbaarheid voor instructieblokken in donkere modus */
+body.dark-mode .border-l-4.border-blue-500 {
+    background-color: rgba(59, 130, 246, 0.2);
+    border-color: #3b82f6;
+    color: #e2e8f0;
+}
+
+body.dark-mode .border-l-4.border-blue-500 h3 {
+    color: #93c5fd;
+}
+
+body.dark-mode .border-l-4.border-blue-500 ol {
+    color: #e2e8f0;
+}
+
+body.dark-mode .border-l-4.border-yellow-500 {
+    background-color: rgba(245, 158, 11, 0.2);
+    border-color: #f59e0b;
+    color: #e2e8f0;
+}
+
+body.dark-mode .border-l-4.border-yellow-500 strong {
+    color: #fcd34d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .app-card {
+        padding: 1rem;
+    }
+    
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    #resultContainer .flex {
+        flex-direction: column;
+    }
+    
+    #resultContainer .space-x-2 > * {
+        margin-left: 0 !important;
+        margin-top: 0.5rem;
+    }
+}
+
+/* Success notification animation */
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+#copySuccess, #downloadSuccess, #apiSuccess, #apiError {
+    animation: fadeOut 2s forwards;
+}
+
+/* Spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinner {
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 3px solid #6366F1;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+body.dark-mode .spinner {
+    border-color: rgba(255, 255, 255, 0.1);
+    border-top-color: white;
+}
+
+/* Focus styles for accessibility */
+:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5);
+}
